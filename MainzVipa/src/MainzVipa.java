@@ -85,7 +85,7 @@ public class MainzVipa
                             }
                             else
                             {
-                                revealNeighbors(Y, X);
+                                clear(Y, X);
                             }
                         }
                     }
@@ -101,7 +101,7 @@ public class MainzVipa
         _frame.setVisible(true);
     }
 
-    private void revealNeighbors(int y, int x)
+    private void clear(int y, int x)
     {
         if (y >= 0 && y < SIZE && x >= 0 && x < SIZE)
         {
@@ -129,10 +129,10 @@ public class MainzVipa
                 {
                     button.setText(" ");
                     button.setBackground(OPEN_COLOR);
-                    revealNeighbors(y - 1, x);
-                    revealNeighbors(y, x - 1);
-                    revealNeighbors(y, x + 1);
-                    revealNeighbors(y + 1, x);
+                    clear(y - 1, x);
+                    clear(y, x - 1);
+                    clear(y, x + 1);
+                    clear(y + 1, x);
                 }
                 --_countdown;
                 if (_countdown == 0)
